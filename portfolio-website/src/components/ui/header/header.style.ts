@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.header`
     position: fixed;
     top: 0;
-    left: 0;
+    left: 4%;
     height: 80px;
     width: 100%;
     display: flex;
@@ -34,8 +34,11 @@ export const Logo = styled.div`
 
 export const Nav = styled.nav`
     display: flex;
-    gap: 30px;
+    gap: 18px;
     align-items: center;
+    margin-left: 0;
+    position: relative;
+    left: -40px;
 
     @media screen and (max-width: 900px) {
         display: none !important;
