@@ -86,7 +86,7 @@ export const MenuToggle = styled.button<{ $isOpen: boolean }>`
         display: block;
         height: 3px;
         width: 24px;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: #ffffff;
         margin: 2px 0;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transform-origin: center;
