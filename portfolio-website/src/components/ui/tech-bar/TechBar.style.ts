@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
 export const TechBarContainer = styled.section`
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -15,8 +15,6 @@ export const TechBarContainer = styled.section`
     
     @media (max-width: 768px) {
         padding: 1.2rem 0;
-        position: static;
-        margin-top: auto;
     }
 `;
 
