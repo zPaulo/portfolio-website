@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/colors';
 
 export const HeaderContainer = styled.header`
     position: fixed;
-    top: 0;
+    top: 5px;
     left: 4%;
     height: 80px;
     width: 100%;
@@ -24,7 +25,7 @@ export const HeaderContainer = styled.header`
 export const Logo = styled.div`
     font-size: 1.6rem;
     font-weight: 700;
-    color: #fff;
+    color: ${colors.whiteText};
     letter-spacing: -0.5px;
     
     @media (max-width: 768px) {
@@ -38,7 +39,7 @@ export const Nav = styled.nav`
     align-items: center;
     margin-left: 0;
     position: relative;
-    left: -40px;
+    left: -100px;
 
     @media screen and (max-width: 900px) {
         display: none !important;
@@ -50,7 +51,7 @@ export const Nav = styled.nav`
 export const NavItem = styled.a`
     text-decoration: none;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: ${colors.whiteTransparent};
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 10px 16px;
@@ -58,7 +59,7 @@ export const NavItem = styled.a`
     letter-spacing: 0.3px;
 
     &:hover {
-        color: #ff6b35;
+        color: ${colors.primary};
     }
 `;
 
@@ -78,7 +79,7 @@ export const MenuToggle = styled.button<{ $isOpen: boolean }>`
     transition: background-color 0.3s ease;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: ${colors.whiteHover};
     }
 
     @media (max-width: 900px) {
@@ -89,7 +90,7 @@ export const MenuToggle = styled.button<{ $isOpen: boolean }>`
         display: block;
         height: 3px;
         width: 24px;
-        background-color: #ffffff;
+        background-color: ${colors.whiteText};
         margin: 2px 0;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transform-origin: center;
@@ -117,19 +118,19 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: ${colors.backgroundOverlay};
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     padding: 20px 40px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 20px ${colors.backgroundBlur};
     transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-100%')});
     transition: transform 0.3s ease;
     z-index: 999;
 
     @media (max-width: 900px) {
-        display: flex; /* Mostra o menu mobile apenas no mobile */
+        display: flex; 
     }
 
     @media (max-width: 768px) {
@@ -140,7 +141,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
     ${NavItem} {
         width: 100%;
         padding: 20px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid ${colors.whiteBorder};
         text-align: left;
         font-size: 1.1rem;
         background-color: transparent;
@@ -151,7 +152,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
         }
 
         &:hover {
-            color: #ff6b35;
+            color: ${colors.primary};
         }
     }
 `;
