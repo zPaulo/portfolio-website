@@ -3,13 +3,13 @@ import { colors } from '../../../styles/colors';
 
 export const HeaderContainer = styled.header`
     position: fixed;
-    top: 5px;
-    left: 4%;
+    top: 0;
+    left: 0;
     height: 80px;
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: transparent;
+    background-color: ${colors.background};
     justify-content: space-between;
     padding: 0px 40px;
     z-index: 1000;
@@ -118,7 +118,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: ${colors.backgroundOverlay};
+    background-color: ${colors.background};
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
