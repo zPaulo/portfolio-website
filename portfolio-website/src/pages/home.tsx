@@ -1,14 +1,15 @@
 import Header from "../components/ui/header/Header.tsx"
 import Presentation from "../components/ui/presentation/Presentation.tsx"
+import AboutMe from "../components/ui/aboutme/Aboutme.tsx"
 
 export default function Home() {
     return (
-        <>
+        <div style={{ overflow: 'hidden' }}>
             <Header />
-            <div>
+            <main>
                 <Presentation />
-                <h1>Home Page</h1>
-            </div>
-        </>
+                <AboutMe />
+            </main>
+        </div>
     )
 }
