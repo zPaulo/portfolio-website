@@ -1,5 +1,6 @@
 import Header from "../components/ui/header/Header.tsx"
 import Presentation from "../components/ui/presentation/Presentation.tsx"
+
 export default function Home() {
     return (
         <>
