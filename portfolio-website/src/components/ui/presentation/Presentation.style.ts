@@ -2,48 +2,47 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
 export const PresentationContainer = styled.section`
-  padding: 2rem;
+  margin-top: 80px; /* Compensando a altura do header fixo */
+  padding: 2rem 5%; /* Reduzindo o padding horizontal */
   width: 100%;
-  height: 100vh;
+  min-height: calc(100vh - 160px); /* Subtraindo header + espaço para techbar */
   background-color: ${colors.background};
-  min-height: 100vh;
   position: relative;
-  margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 768px) {
-    padding: 1rem;
-    padding-top: 20%;
+    margin-top: 72px; /* Altura do header mobile */
+    padding: 2rem 5%;
+    min-height: calc(100vh - 200px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
   }
 `;
+
 
 export const PresentationTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: left;
-    position: absolute;
-    left: 8%;
-    top: 30%;
     flex: 1;
+    max-width: 600px;
     
     @media (max-width: 768px) {
-        position: static;
         align-items: center;
-        justify-content: center;
         text-align: center;
         width: 100%;
-        left: auto;
-        top: auto;
-        right: auto;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        max-width: 100%;
+        padding-bottom: 2rem;
     }
 `;
 
@@ -87,16 +86,15 @@ export const PresentationDescription = styled.h3`
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     margin-bottom: 2rem;
-    left: 45px;
     position: relative;
     
     &::before {
         content: '';
         position: absolute;
-        left: calc(-8vw - 2rem - 20px);
-        top: 75%;
+        left: -80px;
+        top: 50%;
         transform: translateY(-50%);
-        width: calc(8vw + 2rem);
+        width: 60px;
         height: 4px;
         background-color: ${colors.primary};
         
@@ -112,7 +110,6 @@ export const PresentationDescription = styled.h3`
     @media (max-width: 768px) {
         font-size: 2rem;
         margin-top: 30px;
-        left: 0px;
         margin-bottom: 1.5rem;
     }
     
@@ -213,5 +210,25 @@ export const SecondaryButton = styled.button`
     @media (max-width: 480px) {
         width: 180px;
         padding: 0.7rem 1.3rem;
+    }
+`;
+
+export const ImageContainer = styled.div`
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    height: 100%;
+    
+    @media (max-width: 768px) {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        min-height: 300px;
+    }
+    
+    @media (max-width: 480px) {
+        min-height: 250px;
     }
 `;
