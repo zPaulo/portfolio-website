@@ -7,6 +7,7 @@ import {
 } from "./Contacts.style";
 
 const Contacts = () => {
+
     const contacts = [
         {
             name: "Instagram",
