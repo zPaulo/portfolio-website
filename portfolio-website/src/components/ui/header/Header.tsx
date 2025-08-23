@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { HeaderContainer, Logo, Nav, NavItem, MenuToggle, MobileMenu } from "./header.style"
+import { useLanguage } from '../../../contexts/LanguageContext'
+import LanguageToggle from '../language-toggle/LanguageToggle'
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const { t } = useLanguage()
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
@@ -15,10 +18,11 @@ const Header = () => {
 
                 {/* Menu desktop */}
                 <Nav>
-                    <NavItem href="#home">Home</NavItem>
-                    <NavItem href="#about">About</NavItem>
-                    <NavItem href="#projects">Projects</NavItem>
-                    <NavItem href="#contacts">Contacts</NavItem>
+                    <NavItem href="#home">{t('header.home')}</NavItem>
+                    <NavItem href="#about">{t('header.about')}</NavItem>
+                    <NavItem href="#projects">{t('header.projects')}</NavItem>
+                    <NavItem href="#contacts">{t('header.contacts')}</NavItem>
+                    <LanguageToggle />
                 </Nav>
 
                 {/* Botão hambúrguer mobile */}
@@ -31,10 +35,11 @@ const Header = () => {
 
             {/* Menu mobile */}
             <MobileMenu $isOpen={isMenuOpen}>
-                <NavItem href="#home" onClick={() => setIsMenuOpen(false)}>Home</NavItem>
-                <NavItem href="#about" onClick={() => setIsMenuOpen(false)}>About</NavItem>
-                <NavItem href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</NavItem>
-                <NavItem href="#contacts" onClick={() => setIsMenuOpen(false)}>Contacts</NavItem>
+                <NavItem href="#home" onClick={() => setIsMenuOpen(false)}>{t('header.home')}</NavItem>
+                <NavItem href="#about" onClick={() => setIsMenuOpen(false)}>{t('header.about')}</NavItem>
+                <NavItem href="#projects" onClick={() => setIsMenuOpen(false)}>{t('header.projects')}</NavItem>
+                <NavItem href="#contacts" onClick={() => setIsMenuOpen(false)}>{t('header.contacts')}</NavItem>
+                <LanguageToggle />
             </MobileMenu>
         </>
     )

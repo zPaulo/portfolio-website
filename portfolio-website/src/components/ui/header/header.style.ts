@@ -40,7 +40,7 @@ export const Nav = styled.nav`
     align-items: center;
     margin-left: 0;
     position: relative;
-    left: -100px;
+    left: -50px;
 
     @media screen and (max-width: 900px) {
         display: none !important;
@@ -148,12 +148,18 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
         background-color: transparent;
         display: block;
         
-        &:last-child {
-            border-bottom: none;
+        &:last-of-type {
+            border-bottom: 1px solid ${colors.whiteBorder};
         }
 
         &:hover {
             color: ${colors.primary};
         }
+    }
+
+    /* Espaçamento especial para o botão de idioma no mobile */
+    > div:last-child {
+        margin-top: 20px;
+        align-self: center;
     }
 `;
