@@ -1,16 +1,19 @@
 import { PresentationContainer, PresentationTitle, PresentationSubTitle, PresentationDescription, PresentationTextContainer, OrangeDot, ButtonContainer, PrimaryButton, SecondaryButton } from "./Presentation.style";
 import TechBar from "../tech-bar/TechBar";
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 const Presentation = () => {
+    const { t } = useLanguage();
+
     return (
         <PresentationContainer>
             <PresentationTextContainer>
-                <PresentationSubTitle>Hello<OrangeDot></OrangeDot></PresentationSubTitle>
-                <PresentationDescription>I'm Paulo Arruda</PresentationDescription>
-                <PresentationTitle>Data Analyst</PresentationTitle>
+                <PresentationSubTitle>{t('presentation.hello')}<OrangeDot></OrangeDot></PresentationSubTitle>
+                <PresentationDescription>{t('presentation.name')}</PresentationDescription>
+                <PresentationTitle>{t('presentation.role')}</PresentationTitle>
                 <ButtonContainer>
-                    <PrimaryButton>Got a project?</PrimaryButton>
-                    <SecondaryButton>My resume</SecondaryButton>
+                    <PrimaryButton>{t('presentation.gotProject')}</PrimaryButton>
+                    <SecondaryButton>{t('presentation.resume')}</SecondaryButton>
                 </ButtonContainer>
             </PresentationTextContainer>
             <TechBar />
