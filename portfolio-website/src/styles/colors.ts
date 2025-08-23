@@ -4,11 +4,11 @@ export const colors = {
     primary: '#ff6b35',        // Laranja principal
     white: '#FFFFFF',          // Branco puro
     background: '#121E28',     // Azul escuro de fundo
-    backgroundDarker: '#17232D', // Azul ainda mais escuro para a barra de tecnologias
+    backgroundDarker: '#0F1A22', // Azul ainda mais escuro para a barra de tecnologias
 
     // Variações de branco
     whiteText: '#FFFFFF',      // Branco para textos
-    whiteMuted: '#48545E',     // Branco mais escuro para textos secundários
+    whiteMuted: 'rgba(255, 255, 255, 0.6)',     // Branco fosco para textos secundários
     whiteTransparent: 'rgba(255, 255, 255, 0.9)', // Branco semi-transparente
     whiteHover: 'rgba(255, 255, 255, 0.1)',       // Branco para hover
     whiteBorder: 'rgba(255, 255, 255, 0.08)',     // Branco para bordas
