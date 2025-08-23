@@ -12,8 +12,11 @@ import {
     StatNumber,
     StatLabel
 } from "./aboutme.style";
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 const AboutMe = () => {
+    const { t } = useLanguage();
+
     return (
         <AboutmeContainer>
             <ServicesColumn>
@@ -26,7 +29,7 @@ const AboutMe = () => {
                             <path d="M9 15H12" stroke="currentColor" strokeWidth="2" />
                         </svg>
                     </ServiceIcon>
-                    <ServiceText>Website Development</ServiceText>
+                    <ServiceText>{t('aboutme.services.analysis')}</ServiceText>
                 </ServiceItem>
 
                 <ServiceItem>
@@ -38,7 +41,7 @@ const AboutMe = () => {
                             <path d="M8 16H12" stroke="currentColor" strokeWidth="2" />
                         </svg>
                     </ServiceIcon>
-                    <ServiceText>App Development</ServiceText>
+                    <ServiceText>{t('aboutme.services.visualization')}</ServiceText>
                 </ServiceItem>
 
                 <ServiceItem>
@@ -49,32 +52,30 @@ const AboutMe = () => {
                             <path d="M7 12H14" stroke="currentColor" strokeWidth="2" />
                         </svg>
                     </ServiceIcon>
-                    <ServiceText>Website Hosting</ServiceText>
+                    <ServiceText>{t('aboutme.services.automation')}</ServiceText>
                 </ServiceItem>
             </ServicesColumn>
 
             <ContentColumn>
-                <AboutTitle>About me</AboutTitle>
+                <AboutTitle>{t('aboutme.title')}</AboutTitle>
                 <AboutDescription>
-                    I started my software journey from photography. Through that, I learned to
-                    love the process of creating from scratch. Since then, this has led me to
-                    software development as it fulfills my love for learning and building things.
+                    {t('aboutme.description')}
                 </AboutDescription>
 
                 <StatsContainer>
                     <StatItem>
                         <StatNumber>90 <span>+</span></StatNumber>
-                        <StatLabel>Completed Projects</StatLabel>
+                        <StatLabel>{t('aboutme.stats.projects')}</StatLabel>
                     </StatItem>
 
                     <StatItem>
                         <StatNumber>500.000 <span>R$</span></StatNumber>
-                        <StatLabel>Client Economy Process</StatLabel>
+                        <StatLabel>{t('aboutme.stats.economy')}</StatLabel>
                     </StatItem>
 
                     <StatItem>
                         <StatNumber>3 <span>+</span></StatNumber>
-                        <StatLabel>Years of experience</StatLabel>
+                        <StatLabel>{t('aboutme.stats.experience')}</StatLabel>
                     </StatItem>
                 </StatsContainer>
             </ContentColumn>
