@@ -9,7 +9,8 @@ export const HeaderContainer = styled.header`
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: ${colors.background};
+    background-color: rgba(18, 30, 40, 0.95);
+    backdrop-filter: blur(10px);
     justify-content: space-between;
     padding: 0px 40px;
     z-index: 1000;
