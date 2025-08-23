@@ -2,25 +2,21 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
 export const PresentationContainer = styled.section`
-  margin-top: 80px; /* Compensando a altura do header fixo */
-  padding: 2rem 5%; /* Reduzindo o padding horizontal */
   width: 100%;
-  min-height: calc(100vh - 160px); /* Subtraindo header + espaço para techbar */
+  min-height: 100vh;
   background-color: ${colors.background};
   position: relative;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 4rem;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 2rem 5%;
+  margin: 0;
 
   @media (max-width: 768px) {
-    margin-top: 72px; /* Altura do header mobile */
+    min-height: 100vh;
     padding: 2rem 5%;
-    min-height: calc(100vh - 200px);
     flex-direction: column;
     justify-content: center;
     gap: 3rem;
@@ -54,11 +50,11 @@ export const PresentationTitle = styled.h1`
     margin-bottom: 0.5rem;
     
     @media (max-width: 768px) {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
     }
     
     @media (max-width: 480px) {
-        font-size: 2rem;
+        font-size: 2.8rem;
     }
 `;
 
@@ -70,12 +66,12 @@ export const PresentationSubTitle = styled.h2`
     margin-bottom: 2rem;
     
     @media (max-width: 768px) {
-        font-size: 2.2rem;
+        font-size: 3.2rem;
         margin-bottom: 1.5rem;
     }
     
     @media (max-width: 480px) {
-        font-size: 1.8rem;
+        font-size: 2.8rem;
     }
 `;
 
@@ -86,21 +82,23 @@ export const PresentationDescription = styled.h3`
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     margin-bottom: 2rem;
+    margin-left: 35px;
     position: relative;
     
     &::before {
         content: '';
         position: absolute;
-        left: -80px;
-        top: 50%;
+        left: calc(-4.5vw - 140px);
+        top: 70%;
+        border-radius: 1px;
         transform: translateY(-50%);
-        width: 60px;
+        width: calc(5vw + 120px);
         height: 4px;
         background-color: ${colors.primary};
         
         @media (max-width: 768px) {
             left: 50%;
-            top: -20px;
+            top: -12px;
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
@@ -108,31 +106,50 @@ export const PresentationDescription = styled.h3`
     }
     
     @media (max-width: 768px) {
-        font-size: 2rem;
-        margin-top: 30px;
-        margin-bottom: 1.5rem;
+        font-size: 2.8rem;
+        margin-top: 20px;
+        margin-bottom: 2rem;
+        margin-left: 0;
     }
     
     @media (max-width: 480px) {
-        font-size: 1.6rem;
-        margin-top: 25px;
+        font-size: 2.4rem;
+        margin-top: 18px;
     }
 `;
 
 export const OrangeDot = styled.span`
-    color: ${colors.primary};
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
-    line-height: 1;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
     background-color: ${colors.primary};
-    border-radius: 10%;
-    text-align: center;
-    vertical-align: baseline;
-    margin-left: 0.6em;
+    display: inline-block;
+    margin-left: 8px;
+    animation: pulse 2s infinite;
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 14px;
+        height: 14px;
+        margin-left: 6px;
+    }
+
+    @media (max-width: 480px) {
+        width: 12px;
+        height: 12px;
+        margin-left: 5px;
+    }
 `;
 
 export const ButtonContainer = styled.div`
@@ -210,25 +227,5 @@ export const SecondaryButton = styled.button`
     @media (max-width: 480px) {
         width: 180px;
         padding: 0.7rem 1.3rem;
-    }
-`;
-
-export const ImageContainer = styled.div`
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 500px;
-    height: 100%;
-    
-    @media (max-width: 768px) {
-        max-width: 100%;
-        width: 100%;
-        height: auto;
-        min-height: 300px;
-    }
-    
-    @media (max-width: 480px) {
-        min-height: 250px;
     }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/colors';
 
 export const TechBarContainer = styled.section`
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -14,7 +14,13 @@ export const TechBarContainer = styled.section`
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     
     @media (max-width: 768px) {
-        padding: 1.2rem 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 1.5rem 0;
+        margin: 0;
     }
 `;
 
@@ -97,7 +103,7 @@ export const TechItem = styled.span<{ $delay: number }>`
     }
     
     @media (max-width: 700px) {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
         
         @keyframes smoothAutoHover {
             0%, 8%, 92%, 100% {
@@ -114,11 +120,11 @@ export const TechItem = styled.span<{ $delay: number }>`
     }
     
     @media (max-width: 500px) {
-        font-size: 0.85rem;
+        font-size: 1rem;
         letter-spacing: 0.1px;
     }
     
     @media (max-width: 400px) {
-        font-size: 0.8rem;
+        font-size: 0.95rem;
     }
 `;
