@@ -19,10 +19,12 @@ import {
     SeeMoreButton
 } from "./Projects.style";
 import { projectsData, categories } from "../../../data/projectsData";
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 const Projects = () => {
     const [activeCategory, setActiveCategory] = useState('all');
     const [showAllProjects, setShowAllProjects] = useState(false);
+    const { t, language } = useLanguage();
 
     const filteredProjects = activeCategory === 'all'
         ? projectsData
@@ -44,14 +46,10 @@ const Projects = () => {
         <ProjectsContainer>
             <ProjectsHeader>
                 <ProjectsTitle>
-                    Let's a have a look at my
-                    <br />
-                    <span>portfolio</span>
+                    {t('projects.title')}
                 </ProjectsTitle>
                 <ProjectsSubtitle>
-                    There are many variations of passages of Lorem Ipsum
-                    <br />
-                    available, but the majority have suffered.
+                    {t('projects.description')}
                 </ProjectsSubtitle>
             </ProjectsHeader>
 
@@ -62,7 +60,7 @@ const Projects = () => {
                         $active={activeCategory === category.id}
                         onClick={() => handleCategoryChange(category.id)}
                     >
-                        {category.label}
+                        {t(`projects.categories.${category.id}`)}
                     </CategoryButton>
                 ))}
             </CategoriesContainer>
@@ -80,8 +78,8 @@ const Projects = () => {
                                     <TechTag key={index}>{tech}</TechTag>
                                 ))}
                             </TechTags>
-                            <ProjectDescription>{project.description}</ProjectDescription>
-                            <ViewMoreButton>See more</ViewMoreButton>
+                            <ProjectDescription>{project.description[language]}</ProjectDescription>
+                            <ViewMoreButton>{t('projects.viewProject')}</ViewMoreButton>
                         </ProjectContent>
                     </ProjectCard>
                 ))}
@@ -90,7 +88,7 @@ const Projects = () => {
             {hasMoreProjects && !showAllProjects && (
                 <SeeMoreContainer>
                     <SeeMoreButton onClick={handleSeeMore}>
-                        See More Projects
+                        {t('projects.seeMore')}
                     </SeeMoreButton>
                 </SeeMoreContainer>
             )}
