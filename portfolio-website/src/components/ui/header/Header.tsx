@@ -11,6 +11,20 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen)
     }
 
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            const headerHeight = 80 // altura do header
+            const elementPosition = element.offsetTop - headerHeight
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            })
+        }
+        setIsMenuOpen(false)
+    }
+
     return (
         <>
             <HeaderContainer>
@@ -18,10 +32,10 @@ const Header = () => {
 
                 {/* Menu desktop */}
                 <Nav>
-                    <NavItem href="#home">{t('header.home')}</NavItem>
-                    <NavItem href="#about">{t('header.about')}</NavItem>
-                    <NavItem href="#projects">{t('header.projects')}</NavItem>
-                    <NavItem href="#contacts">{t('header.contacts')}</NavItem>
+                    <NavItem onClick={() => scrollToSection('home')}>{t('header.home')}</NavItem>
+                    <NavItem onClick={() => scrollToSection('about')}>{t('header.about')}</NavItem>
+                    <NavItem onClick={() => scrollToSection('projects')}>{t('header.projects')}</NavItem>
+                    <NavItem onClick={() => scrollToSection('contacts')}>{t('header.contacts')}</NavItem>
                     <LanguageToggle />
                 </Nav>
 
@@ -35,10 +49,10 @@ const Header = () => {
 
             {/* Menu mobile */}
             <MobileMenu $isOpen={isMenuOpen}>
-                <NavItem href="#home" onClick={() => setIsMenuOpen(false)}>{t('header.home')}</NavItem>
-                <NavItem href="#about" onClick={() => setIsMenuOpen(false)}>{t('header.about')}</NavItem>
-                <NavItem href="#projects" onClick={() => setIsMenuOpen(false)}>{t('header.projects')}</NavItem>
-                <NavItem href="#contacts" onClick={() => setIsMenuOpen(false)}>{t('header.contacts')}</NavItem>
+                <NavItem onClick={() => scrollToSection('home')}>{t('header.home')}</NavItem>
+                <NavItem onClick={() => scrollToSection('about')}>{t('header.about')}</NavItem>
+                <NavItem onClick={() => scrollToSection('projects')}>{t('header.projects')}</NavItem>
+                <NavItem onClick={() => scrollToSection('contacts')}>{t('header.contacts')}</NavItem>
                 <LanguageToggle />
             </MobileMenu>
         </>

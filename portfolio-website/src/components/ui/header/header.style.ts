@@ -49,7 +49,7 @@ export const Nav = styled.nav`
     }
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled.button`
     text-decoration: none;
     font-size: 0.95rem;
     color: ${colors.whiteTransparent};
@@ -58,9 +58,24 @@ export const NavItem = styled.a`
     padding: 10px 16px;
     position: relative;
     letter-spacing: 0.3px;
-
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
+    
     &:hover {
         color: ${colors.primary};
+    }
+    
+    &:focus {
+        outline: none;
+        color: ${colors.primary};
+    }
+    
+    &:active {
+        outline: none;
+        transform: scale(0.98);
     }
 `;
 
