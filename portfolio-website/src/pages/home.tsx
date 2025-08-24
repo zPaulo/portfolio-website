@@ -9,10 +9,18 @@ export default function Home() {
         <div style={{ overflow: 'hidden' }}>
             <Header />
             <main>
-                <Presentation />
-                <AboutMe />
-                <Projects />
-                <Contacts />
+                <section id="home">
+                    <Presentation />
+                </section>
+                <section id="about">
+                    <AboutMe />
+                </section>
+                <section id="projects">
+                    <Projects />
+                </section>
+                <section id="contacts">
+                    <Contacts />
+                </section>
             </main>
         </div>
     )
