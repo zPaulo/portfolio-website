@@ -66,7 +66,7 @@ const translations = {
             description: 'Sou um analista de dados apaixonado por transformar informações em insights valiosos. Com experiência em Python, SQL e ferramentas de visualização, ajudo empresas a tomar decisões baseadas em dados.',
             services: {
                 analysis: 'Análise de Dados',
-                visualization: 'Visualização',
+                dataengeneer: 'Engenharia de Dados',
                 automation: 'Automação'
             },
             stats: {
@@ -111,10 +111,10 @@ const translations = {
         },
         aboutme: {
             title: 'About me',
-            description: 'I am a data analyst passionate about transforming information into valuable insights. With experience in Python, SQL and visualization tools, I help companies make data-driven decisions.',
+            description: 'I am a data analyst passionate about transforming information into valuable insights. With experience in Python, SQL and dataengeneer tools, I help companies make data-driven decisions.',
             services: {
                 analysis: 'Data Analysis',
-                visualization: 'Visualization',
+                dataengeneer: 'Data Engineering',
                 automation: 'Automation'
             },
             stats: {

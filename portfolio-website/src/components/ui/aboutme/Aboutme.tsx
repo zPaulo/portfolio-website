@@ -41,7 +41,7 @@ const AboutMe = () => {
                             <path d="M8 16H12" stroke="currentColor" strokeWidth="2" />
                         </svg>
                     </ServiceIcon>
-                    <ServiceText>{t('aboutme.services.visualization')}</ServiceText>
+                    <ServiceText>{t('aboutme.services.dataengeneer')}</ServiceText>
                 </ServiceItem>
 
                 <ServiceItem>
