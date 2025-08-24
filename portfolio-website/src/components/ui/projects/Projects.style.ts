@@ -159,17 +159,50 @@ export const ProjectImage = styled.div`
     height: 200px;
     overflow: hidden;
     position: relative;
+    background-color: ${colors.backgroundDarker};
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.3s ease;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.1) 50%,
+            rgba(0, 0, 0, 0.3) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        border-radius: 12px 12px 0 0;
     }
     
-    &:hover img {
-        transform: scale(1.05);
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        object-position: center top;
+        transition: transform 0.3s ease;
+        border-radius: 8px;
+    }
+    
+    &:hover {
+        img {
+            transform: scale(1.02);
+        }
+        
+        &::after {
+            opacity: 1;
+        }
     }
 `;
 
