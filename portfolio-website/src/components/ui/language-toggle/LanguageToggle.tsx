@@ -1,22 +1,29 @@
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { LanguageButton, LanguageButtonContainer } from './LanguageToggle.style.ts';
+import { LanguageToggleContainer, LanguageOption, SliderIndicator } from './LanguageToggle.style.ts';
 
 const LanguageToggle = () => {
     const { language, setLanguage } = useLanguage();
 
-    const toggleLanguage = () => {
-        setLanguage(language === 'pt' ? 'en' : 'pt');
+    const handleLanguageChange = (lang: 'pt' | 'en') => {
+        setLanguage(lang);
     };
 
     return (
-        <LanguageButtonContainer>
-            <LanguageButton onClick={toggleLanguage} $isActive={language === 'pt'}>
+        <LanguageToggleContainer>
+            <SliderIndicator $language={language} />
+            <LanguageOption
+                onClick={() => handleLanguageChange('pt')}
+                $isActive={language === 'pt'}
+            >
                 PT
-            </LanguageButton>
-            <LanguageButton onClick={toggleLanguage} $isActive={language === 'en'}>
+            </LanguageOption>
+            <LanguageOption
+                onClick={() => handleLanguageChange('en')}
+                $isActive={language === 'en'}
+            >
                 EN
-            </LanguageButton>
-        </LanguageButtonContainer>
+            </LanguageOption>
+        </LanguageToggleContainer>
     );
 };
 
