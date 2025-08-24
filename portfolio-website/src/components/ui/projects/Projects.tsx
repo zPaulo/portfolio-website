@@ -60,7 +60,7 @@ const Projects = () => {
                         $active={activeCategory === category.id}
                         onClick={() => handleCategoryChange(category.id)}
                     >
-                        {t(`projects.categories.${category.id}`)}
+                        {category.label}
                     </CategoryButton>
                 ))}
             </CategoriesContainer>
@@ -79,7 +79,11 @@ const Projects = () => {
                                 ))}
                             </TechTags>
                             <ProjectDescription>{project.description[language]}</ProjectDescription>
-                            <ViewMoreButton>{t('projects.viewProject')}</ViewMoreButton>
+                            <ViewMoreButton
+                                onClick={() => window.open(project.url, '_blank')}
+                            >
+                                {t('projects.viewProject')}
+                            </ViewMoreButton>
                         </ProjectContent>
                     </ProjectCard>
                 ))}
