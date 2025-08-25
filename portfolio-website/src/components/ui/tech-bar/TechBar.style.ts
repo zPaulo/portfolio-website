@@ -14,13 +14,12 @@ export const TechBarContainer = styled.section`
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     
     @media (max-width: 768px) {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
+        position: static;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
         padding: 1.5rem 0;
-        margin: 0;
+        margin-top: 2rem;
     }
 `;
 
