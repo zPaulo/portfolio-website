@@ -9,17 +9,17 @@ export const PresentationContainer = styled.section`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 4rem;
   padding: 2rem 5%;
   margin: 0;
 
   @media (max-width: 768px) {
-    min-height: 100vh;
-    padding: 2rem 5%;
+    min-height: auto;
+    padding: 6rem 5% 2rem 5%;
     flex-direction: column;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: flex-start;
+    gap: 2rem;
   }
 `;
 
@@ -38,7 +38,7 @@ export const PresentationTextContainer = styled.div`
         text-align: center;
         width: 100%;
         max-width: 100%;
-        padding-bottom: 2rem;
+        padding-bottom: 0;
     }
 `;
 
@@ -158,16 +158,19 @@ export const ButtonContainer = styled.div`
     margin-top: 2.5rem;
     
     @media (max-width: 768px) {
-        gap: 1rem;
-        margin-top: 2rem;
-        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+        flex-direction: row;
         align-items: center;
         width: 100%;
+        justify-content: center;
     }
     
     @media (max-width: 480px) {
-        gap: 0.8rem;
-        margin-top: 1.5rem;
+        gap: 0.6rem;
+        margin-top: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
 `;
 
@@ -189,14 +192,15 @@ export const PrimaryButton = styled.button`
     }
     
     @media (max-width: 768px) {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-        width: 200px;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        width: 140px;
     }
     
     @media (max-width: 480px) {
-        width: 180px;
+        width: 160px;
         padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
     }
 `;
 
@@ -219,13 +223,52 @@ export const SecondaryButton = styled.button`
     }
     
     @media (max-width: 768px) {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-        width: 200px;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        width: 140px;
     }
     
     @media (max-width: 480px) {
-        width: 180px;
+        width: 160px;
         padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
+    }
+`;
+
+export const PresentationImageContainer = styled.div`
+    flex: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 420px;
+    padding-left: 2rem;
+    
+    @media (max-width: 768px) {
+        order: -1;
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+        padding-left: 0;
+    }
+    
+    @media (max-width: 480px) {
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+`;
+
+export const PresentationImage = styled.img`
+    width: 100%;
+    height: auto;
+    max-width: 380px;
+    border-radius: 50%;
+    
+    @media (max-width: 768px) {
+        max-width: 220px;
+    }
+    
+    @media (max-width: 480px) {
+        max-width: 180px;
     }
 `;

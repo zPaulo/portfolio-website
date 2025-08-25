@@ -1,4 +1,4 @@
-import { PresentationContainer, PresentationTitle, PresentationSubTitle, PresentationDescription, PresentationTextContainer, OrangeDot, ButtonContainer, PrimaryButton, SecondaryButton } from "./Presentation.style";
+import { PresentationContainer, PresentationTitle, PresentationSubTitle, PresentationDescription, PresentationTextContainer, OrangeDot, ButtonContainer, PrimaryButton, SecondaryButton, PresentationImageContainer, PresentationImage } from "./Presentation.style";
 import TechBar from "../tech-bar/TechBar";
 import { useLanguage } from '../../../contexts/LanguageContext';
 
@@ -15,8 +15,14 @@ const Presentation = () => {
                     <PrimaryButton>{t('presentation.gotProject')}</PrimaryButton>
                     <SecondaryButton>{t('presentation.resume')}</SecondaryButton>
                 </ButtonContainer>
+                <TechBar />
             </PresentationTextContainer>
-            <TechBar />
+            <PresentationImageContainer>
+                <PresentationImage 
+                    src="/assets/images/paulo_circle_bg.jpg" 
+                    alt="Paulo Arruda"
+                />
+            </PresentationImageContainer>
         </PresentationContainer>
     );
 }
