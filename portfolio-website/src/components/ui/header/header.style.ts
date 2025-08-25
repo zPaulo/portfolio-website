@@ -24,13 +24,19 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Logo = styled.div`
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: ${colors.whiteText};
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    
+    img {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+    }
     
     @media (max-width: 768px) {
-        font-size: 1.4rem;
+        img {
+            height: 35px;
+        }
     }
 `;
 
