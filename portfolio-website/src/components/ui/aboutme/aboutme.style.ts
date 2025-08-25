@@ -50,10 +50,12 @@ export const ServicesColumn = styled.div`
 
     @media (max-width: 768px) {
         gap: 40px;
+        align-items: flex-start;
         
-        /* Esconder linha vertical no mobile */
+        /* Ajustar linha vertical no mobile */
         &::before {
-            display: none;
+            left: 28px;
+            width: 3px;
         }
     }
 `;
@@ -110,19 +112,14 @@ export const ServiceItem = styled.div`
     }
 
     @media (max-width: 768px) {
-        padding-left: 0;
-        justify-content: center;
+        padding-left: 60px;
+        justify-content: flex-start;
         
-        /* Esconder bolinhas no mobile */
+        /* Ajustar posição das bolinhas no mobile */
         &::before {
-            display: none;
-        }
-        
-        /* Parar animações no mobile */
-        &:nth-child(1)::before,
-        &:nth-child(2)::before,
-        &:nth-child(3)::before {
-            animation: none;
+            left: 24px;
+            width: 10px;
+            height: 10px;
         }
     }
 `;
@@ -161,10 +158,12 @@ export const AboutTitle = styled.h2`
     font-size: 56px;
     font-weight: 700;
     margin: 0;
+    margin-top: 40px;
     line-height: 1.2;
 
     @media (max-width: 768px) {
         font-size: 42px;
+        margin-top: 20px;
     }
 `;
 
@@ -183,12 +182,12 @@ export const AboutDescription = styled.p`
 
 export const StatsContainer = styled.div`
     display: flex;
-    gap: 70px;
+    gap: 80px;
     margin-top: 25px;
 
     @media (max-width: 768px) {
         justify-content: center;
-        gap: 50px;
+        gap: 60px;
     }
 
     @media (max-width: 480px) {
@@ -206,16 +205,17 @@ export const StatItem = styled.div`
 
 export const StatNumber = styled.div`
     color: ${colors.whiteText};
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 1;
+    white-space: nowrap;
 
     span {
         color: ${colors.primary};
     }
 
     @media (max-width: 768px) {
-        font-size: 32px;
+        font-size: 24px;
     }
 `;
 
