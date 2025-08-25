@@ -35,6 +35,18 @@ export const projectsData: Project[] = [
         category: "Web Development",
         technologies: ["Python", "FastAPI", "DevOps", "PostgreSQL", "Pytest"],
         url: "https://github.com/zPaulo/checklist_api"
+    },
+    {
+        id: 3,
+        title: "Gestão de Contratos",
+        description: {
+            pt: "APP para gerenciamento de novos contratos de exportação com SLA por etapa, encorporando 8 setores da cadeia produtiva empresarial.",
+            en: "APP for managing new export contracts with SLA by stage, incorporating 8 sectors of the business production chain."
+        },
+        image: "/assets/images/app_contratos.png",
+        category: "Power Plataform",
+        technologies: ["Power Apps", "Power Automate", "DevOps", "SQL Server"],
+        url: "https://github.com/zPaulo"
     }
 ];
 
