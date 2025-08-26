@@ -5,6 +5,23 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 const Presentation = () => {
     const { t } = useLanguage();
 
+    const handleResumeClick = () => {
+        window.open('/PAULO-ARRUDA-GOMES.pdf', '_blank');
+    };
+
+    const handleProjectClick = () => {
+        const contactsSection = document.getElementById('contacts');
+        if (contactsSection) {
+            const headerHeight = 80;
+            const elementPosition = contactsSection.offsetTop - headerHeight;
+
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <PresentationContainer>
             <PresentationTextContainer>
@@ -12,14 +29,14 @@ const Presentation = () => {
                 <PresentationDescription>{t('presentation.name')}</PresentationDescription>
                 <PresentationTitle>{t('presentation.role')}</PresentationTitle>
                 <ButtonContainer>
-                    <PrimaryButton>{t('presentation.gotProject')}</PrimaryButton>
-                    <SecondaryButton>{t('presentation.resume')}</SecondaryButton>
+                    <PrimaryButton onClick={handleProjectClick}>{t('presentation.gotProject')}</PrimaryButton>
+                    <SecondaryButton onClick={handleResumeClick}>{t('presentation.resume')}</SecondaryButton>
                 </ButtonContainer>
                 <TechBar />
             </PresentationTextContainer>
             <PresentationImageContainer>
-                <PresentationImage 
-                    src="/assets/images/paulo_circle_bg.jpg" 
+                <PresentationImage
+                    src="/assets/images/paulo_circle_bg.jpg"
                     alt="Paulo Arruda"
                 />
             </PresentationImageContainer>
