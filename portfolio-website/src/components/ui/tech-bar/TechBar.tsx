@@ -9,7 +9,8 @@ const TechBar = () => {
         "Tableau",
         "QlikSense",
         "Looker Studio",
-        "JavaScript",
+        "Power Platform",
+        "Typescript",
         "React",
         "DevOps"
     ];
