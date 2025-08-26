@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header`
     backdrop-filter: blur(10px);
     justify-content: space-between;
     padding: 0px 40px;
-    z-index: 1000;
+    z-index: 1010;
     box-sizing: border-box;
     transition: all 0.3s ease;
 
@@ -149,7 +149,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
     box-shadow: 0 4px 20px ${colors.backgroundBlur};
     transform: translateY(${({ $isOpen }) => ($isOpen ? '0' : '-100%')});
     transition: transform 0.3s ease;
-    z-index: 999;
+    z-index: 1005;
 
     @media (max-width: 900px) {
         display: flex; 
@@ -182,5 +182,7 @@ export const MobileMenu = styled.div<{ $isOpen: boolean }>`
     > div:last-child {
         margin-top: 20px;
         align-self: center;
+        z-index: 1006;
+        position: relative;
     }
 `;
